@@ -1,1 +1,2 @@
 CREATE DATABASE a_database;
+CREATE TABLE `a_database`.`users` ( `id` INT NOT NULL AUTO_INCREMENT , `username` VARCHAR(30) NOT NULL , `password` VARCHAR(30) NOT NULL , `firstname` VARCHAR(30) NOT NULL , `surname` VARCHAR(30) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
