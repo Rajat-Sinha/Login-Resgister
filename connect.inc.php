@@ -8,4 +8,5 @@ $con=@mysqli_connect($mysqli_host,$mysqli_user,$mysqli_pass);
 if(!@mysqli_connect($mysqli_host,$mysqli_user,$mysqli_pass) || !@mysqli_select_db($con,$mysqli_db)){
 	die($conn_error);
 }
+
 ?>

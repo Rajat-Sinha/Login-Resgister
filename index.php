@@ -7,10 +7,12 @@
    <?php
 		@require 'core.inc.php';
 		@require 'connect.inc.php';
+		
 		function getuserfield($field){
 			$query="SELECT `$field` FROM `users` WHERE `id`='".$_SESSION['user_id']."'";
-			if($query_run=mysql_query($query)){
-				if($query_result=mysql_result($query_run,0,$field)){
+			
+			if($query_run=@mysqli_query($con,$query)){
+				if($query_result=mysqli_result($query_run,0,$field)){
 					return $query_result;
 				}
 				

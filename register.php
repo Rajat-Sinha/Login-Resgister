@@ -36,12 +36,12 @@ if(!loggedin()){
 					echo 'password does not match';
 				}else{
 					$query="SELECT `username` FROM `users` WHERE `username`='$username'";
-					$query_run=mysql_query($query);
-					if(mysql_num_rows($query_run)==1){
+					$query_run=mysqli_query($con,$query);
+					if(mysqli_num_rows($query_run)==1){
 						echo '<script type="text/javascript"> bootbox.alert("<p style=\"color:red;font:18px bold tahoma;margin-top:30px;\"> The username '.$username.' already exists</p> ");</script>';
 					}else{
-					 $query="INSERT INTO `users` VALUES('','".mysql_real_escape_string($username)."','".mysql_real_escape_string($password)."','".mysql_real_escape_string($firstname)."','".mysql_real_escape_string($surname)."')";
-					 if( $query_run=mysql_query($query)){
+					 $query="INSERT INTO `users` VALUES('','".mysqli_real_escape_string($con,$username)."','".mysqli_real_escape_string($con,$password)."','".mysqli_real_escape_string($con,$firstname)."','".mysqli_real_escape_string($con,$surname)."')";
+					 if( $query_run=mysqli_query($con,$query)){
 						 header('Location:sucess.php');
 					 }else{
 						 echo '<script type="text/javascript"> bootbox.alert("<p style=\"color:red;font:18px bold tahoma;margin-top:30px;\"> Error: <strong>Soory!! We Could Not register this time,try next time.... </strong></p> ");</script>';
